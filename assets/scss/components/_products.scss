@@ -5,8 +5,12 @@
     }
     &__container{
         padding: 3rem 0;
-        grid-template-columns: repeat(2, 1fr);
+        // grid-template-columns: repeat(2, 1fr);
         gap: 2.5rem 3rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 这里的250px是产品卡的最小宽度，可以根据需要进行调整 */
+        gap: 2rem; /* 设置产品卡之间的间隙 */
+        justify-items: center; /* 使每个产品卡在其格子中居中显示 */
     }
     &__card{
         display: grid;
