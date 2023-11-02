@@ -140,3 +140,23 @@ sr.reveal(`.home__social`, {delay: 600})
 sr.reveal(`.about__img, .contact__box`,{origin: 'left'})
 sr.reveal(`.about__data, .contact__form`,{origin: 'right'})
 sr.reveal(`.steps__card, .product__card, .questions__group, .footer`,{interval: 100})
+
+
+const infoButtons = document.querySelectorAll('.info-button');
+
+infoButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        const productCard = e.currentTarget.closest('.product__card');
+        const infoDiv = productCard.querySelector('.product__info');
+
+        if (infoDiv.style.opacity == 0 || infoDiv.style.opacity == '') {
+            infoDiv.style.opacity = 1;
+            infoDiv.style.display = 'block';
+        } else {
+            infoDiv.style.opacity = 0;
+            setTimeout(() => {
+                infoDiv.style.display = 'none';
+            }, 300);
+        }
+    });
+});
